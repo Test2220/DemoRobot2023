@@ -35,8 +35,17 @@ CANSparkMax m_rightFrontMotor;
     m_leftBackMotor.restoreFactoryDefaults();
     m_rightFrontMotor.restoreFactoryDefaults();
     m_rightBackMotor.restoreFactoryDefaults();
+
+    m_leftBackMotor.follow(m_leftFrontMotor);
+    m_rightBackMotor.follow(m_rightFrontMotor);
 }
 
+public void setPerventOutput(double left, double right){
+
+    m_leftFrontMotor.set(left);
+    m_rightFrontMotor.set(right);
+
+}
 
   /**
    * Example command factory method.
