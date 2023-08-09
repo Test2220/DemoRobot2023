@@ -11,7 +11,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class REVSparkMaxes extends SubsystemBase {
+public class Drivetrain extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
 
 CANSparkMax m_leftBackMotor;
@@ -19,7 +19,7 @@ CANSparkMax m_leftFrontMotor;
 CANSparkMax m_rightBackMotor;
 CANSparkMax m_rightFrontMotor;
 
-  public REVSparkMaxes() {  
+  public Drivetrain() {  
     m_leftFrontMotor = new CANSparkMax(4, MotorType.kBrushless);
     m_leftBackMotor = new CANSparkMax(3, MotorType.kBrushless);
     m_rightFrontMotor = new CANSparkMax(5, MotorType.kBrushless);
@@ -40,7 +40,7 @@ CANSparkMax m_rightFrontMotor;
     m_rightBackMotor.follow(m_rightFrontMotor);
 }
 
-public void setPerventOutput(double left, double right){
+public void setPercentOutput(double left, double right){
 
     m_leftFrontMotor.set(left);
     m_rightFrontMotor.set(right);

@@ -7,6 +7,7 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.Elevator;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -24,6 +25,8 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final Elevator elevator = new Elevator();
+  private final Drivetrain drivetrain = new Drivetrain();
+
 
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
@@ -55,6 +58,15 @@ public class RobotContainer {
     m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
     m_driverController.leftTrigger(0.1).whileTrue(Commands.run(()->{elevator.setPercentOutput(m_driverController.getLeftTriggerAxis());}, elevator));
     m_driverController.rightTrigger(0.1).whileTrue(Commands.run(()->{elevator.setPercentOutput(-m_driverController.getRightTriggerAxis());},elevator));
+
+    drivetrain.setDefaultCommand(Commands.run( ()-> {
+      double left = m_driverController.getRightY();
+      double right = m_driverController.getLeftY();
+
+      drivetrain.setPercentOutput(left, right);
+
+
+    }));
   }
 
   /**
