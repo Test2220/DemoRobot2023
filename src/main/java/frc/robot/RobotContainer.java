@@ -64,9 +64,7 @@ public class RobotContainer {
       double right = m_driverController.getLeftY();
 
       drivetrain.setPercentOutput(left, right);
-
-
-    }));
+    }, drivetrain));
   }
 
   /**
