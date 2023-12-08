@@ -10,6 +10,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.SparkMax;;
 
 public class Drivetrain extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
@@ -20,10 +21,10 @@ CANSparkMax m_rightBackMotor;
 CANSparkMax m_rightFrontMotor;
 
   public Drivetrain() {  
-    m_leftFrontMotor = new CANSparkMax(4, MotorType.kBrushless);
-    m_leftBackMotor = new CANSparkMax(3, MotorType.kBrushless);
-    m_rightFrontMotor = new CANSparkMax(5, MotorType.kBrushless);
-    m_rightBackMotor = new CANSparkMax(2, MotorType.kBrushless);
+    m_leftFrontMotor = new CANSparkMax(SparkMax.FRONT_LEFT, MotorType.kBrushless);
+    m_leftBackMotor = new CANSparkMax(SparkMax.BACK_LEFT, MotorType.kBrushless);
+    m_rightFrontMotor = new CANSparkMax(SparkMax.FRONT_RIGHT, MotorType.kBrushless);
+    m_rightBackMotor = new CANSparkMax(SparkMax.BACK_RIGHT, MotorType.kBrushless);
 
     /**
      * The RestoreFactoryDefaults method can be used to reset the configuration parameters
