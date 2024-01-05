@@ -19,10 +19,12 @@ public final class Constants {
   }
 
   public static class SparkMax {
-    public static final int FRONT_LEFT = 4;
-    public static final int FRONT_RIGHT = 5;
-    public static final int BACK_LEFT= 3;
-    public static final int BACK_RIGHT = 2;
+    public static final int FRONT_LEFT = 1;
+    public static final int FRONT_RIGHT = 2;
+    public static final int BACK_LEFT= 6;
+    public static final int BACK_RIGHT = 3;
+    public static final int RIGHT_ELEVATOR = 4;
+    public static final int LEFT_ELEVATOR = 5;
 
   }
 }

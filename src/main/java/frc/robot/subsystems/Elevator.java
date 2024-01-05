@@ -10,6 +10,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.SparkMax;
 
 public class Elevator extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
@@ -19,8 +20,8 @@ public class Elevator extends SubsystemBase {
 
   public Elevator() {
 
-    m_leftMotor = new CANSparkMax(2, MotorType.kBrushless);
-    m_rightMotor = new CANSparkMax(3, MotorType.kBrushless);
+    m_leftMotor = new CANSparkMax(SparkMax.LEFT_ELEVATOR, MotorType.kBrushless);
+    m_rightMotor = new CANSparkMax(SparkMax.RIGHT_ELEVATOR, MotorType.kBrushless);
 
     m_leftMotor.restoreFactoryDefaults();
     m_rightMotor.restoreFactoryDefaults();    
